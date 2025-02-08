@@ -1,3 +1,19 @@
-body{
-    color: red;
+label{
+    margin: 20px;
+}
+.name{
+    margin: 20px;
+}
+.gridDiv{
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+}
+.cell{
+    border: black 1px solid;
+    /* width: 20px;
+    height: 20px; */
+}
+.cell:hover{
+    background-color: grey;
 }

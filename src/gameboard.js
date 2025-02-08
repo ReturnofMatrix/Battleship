@@ -1,8 +1,7 @@
 // gameboard.js
-// import { Ship } from './ship';
-const Ship = require('./ship.js');
+import { Ship } from './ship';
 
-class Gameboard{
+export default class Gameboard{
 
     
     constructor(){
@@ -53,6 +52,10 @@ class Gameboard{
         }
         else{
             let ship = this.gameboard[ i ][ j ] ;
+            if(this.ships[ship].isSunk())
+            {
+                return;
+            }
             this.ships[ship].hit();
             // return this.ships[ship].isSunk();
         }
@@ -66,5 +69,3 @@ class Gameboard{
         })
     }
 }
-
-module.exports = Gameboard;
