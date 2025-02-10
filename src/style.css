@@ -1,13 +1,16 @@
-label{
-    margin: 20px;
-}
-.name{
-    margin: 20px;
+.start{
+    position: absolute;
+    top: 40%;
+    right: 45%;
 }
 .gridDiv{
+    display: flex;
+    justify-content: space-around;
+}
+.grid{
     display: grid;
-    grid-template-columns: repeat(10, 50px);
-    grid-template-rows: repeat(10, 50px);
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
 }
 .cell{
     border: black 1px solid;

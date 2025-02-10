@@ -1,25 +1,22 @@
 //index.js
 import './style.css';
-import gameBoard from './gameboard';
 import { nameUi } from './ui';
-import { setupEvent, getPlayerBoard } from './event';
+import { setupEvent } from './event';
+import { initializePlayers } from './player';
 
+// Form to enter the name of the player.
 nameUi();
 
+// To add event listeners to the buttons 
 setupEvent();
 
-let playerName = getPlayerBoard();
+// Initialize the player and computer objects and place their ships.
+initializePlayers();
 
-// if(playerName)
-// {
-//     playerName.placeShip( 1, [[ 1, 3],[ 4, 5]]);
-//     playerName.placeShip( 2, [[ 1, 3],[ 4, 5],[ 6, 7]]);
-//     playerName.placeShip( 3, [[ 1, 3],[ 4, 5],[ 6, 7]]);
-//     playerName.placeShip( 4, [[ 1, 3],[ 4, 5],[ 6, 7],[ 6, 7]]);
-//     playerName.placeShip( 5, [[ 1, 3],[ 4, 5],[ 6, 7],[ 6, 7],[ 6, 7]]);
-// }
 
-// let hit = Roshan.receiveAttack( 4, 6);
+
+
+
 
 
 
