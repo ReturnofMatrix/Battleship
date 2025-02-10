@@ -4,6 +4,7 @@ import { gameOverUi, turnUi } from './ui';
 // Variables declation to track players in the game. which will keep changing after every move.
 export let activePlayer;
 export let opponent;
+export let gameOver = false;
 
 let player = {
     isHuman : true,
@@ -47,6 +48,7 @@ export function playGame(row, column)
     // ui is rendered only if it returns true;
     if(opponent.board.gameOver()){
         gameOverUi();
+        gameOver = true;
         return;
     }
 

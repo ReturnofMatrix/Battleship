@@ -1,12 +1,13 @@
-import { activePlayer, opponent } from "./player";
+import { activePlayer } from "./player";
 
 const body = document.querySelector('body');
 
 export function nameUi(){
 
     const button = document.createElement('button');
-    button.textContent = 'Start The game.'
+    button.textContent = 'Start Game.'
     button.classList.add('start');
+    body.style.backgroundColor = 'rgb(135, 206, 235)';
 
     body.appendChild(button);
 }
@@ -19,12 +20,6 @@ export function boardUi(){
     title.textContent = 'Battleship.';
     title.classList.add('title');
     body.appendChild(title);
-
-    // div to display who's turn it is.
-    const turn = document.createElement('div');
-    turn.classList.add('turn');
-    body.appendChild(turn);
-    turnUi();// for initial turn display.
     
     //gridDiv has body playerboard grid and computerBoard grid.
     const gridDiv = document.createElement('div');
@@ -65,7 +60,7 @@ export function boardUi(){
     computerGridDiv.appendChild(computerGrid);
     gridDiv.appendChild(computerGridDiv);
 
-    const p2 = document.createElement('div');
+    const p2 = document.createElement('p');
     p2.textContent = 'Computer board.'
     computerGridDiv.appendChild(p2);
 
@@ -80,6 +75,12 @@ export function boardUi(){
             computerGrid.appendChild(div);
         }
     }
+
+    // div to display who's turn it is.
+    const turn = document.createElement('div');
+    turn.classList.add('turn');
+    body.appendChild(turn);
+    turnUi();// for initial turn display.
 }
 
 //Only the cell which is hit or missed is rendered by functions.
@@ -120,6 +121,7 @@ export function missedUi( i, j)
 export function gameOverUi(){
     body.textContent = ''
     const div = document.createElement('div');
+    div.classList.add('over');
     body.appendChild(div);
     if(activePlayer.isHuman){
         div.textContent = 'Player won, Computer lost.';
@@ -133,7 +135,7 @@ export function turnUi()
     const div = document.querySelector('.turn');
     if(activePlayer.isHuman)
     {
-        div.textContent = `Player turn.`;
+        div.textContent = `Player's turn.`;
     }
     else
     {

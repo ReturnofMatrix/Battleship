@@ -1,22 +1,71 @@
-.start{
-    position: absolute;
-    top: 40%;
-    right: 45%;
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+body{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 .gridDiv{
     display: flex;
     justify-content: space-around;
+    flex-grow: 1;
+    align-items: center;
 }
 .grid{
     display: grid;
-    grid-template-columns: repeat(10, 30px);
-    grid-template-rows: repeat(10, 30px);
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
 }
 .cell{
     border: black 1px solid;
-    /* width: 20px;
-    height: 20px; */
 }
 .cell:hover{
     background-color: grey;
+}
+p{
+    text-align: center;
+    font-size: 30px;
+}
+.title{
+    font-size: 40px;
+    background-color: rgb(119, 152, 237);
+    text-align:  center;
+    padding: 10px;
+}
+.turn{
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    background-color: rgb(119, 152, 237);
+    padding-bottom: 50px;
+    padding-top: 20px;
+}
+.start, .over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -90%); /* Perfect centering */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 200px;  /* Adjust as needed */
+    height: 80px;  /* Adjust as needed */
+    font-size: 30px;
+    text-align: center;
+}
+.start {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    cursor: pointer;
+}
+.over {
+    font-weight: bold;
 }
